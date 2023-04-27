@@ -9,6 +9,7 @@ import { BannerUnoComponent } from './components/header/banner-uno/banner-uno.co
 import { BannerDosComponent } from './components/header/banner-dos/banner-dos.component';
 import { EducationComponent } from './components/education/education.component';
 import { ExperienceComponent } from './components/experience/experience.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { ExperienceComponent } from './components/experience/experience.componen
     BannerDosComponent,
     EducationComponent,
     ExperienceComponent,
+    FooterComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
