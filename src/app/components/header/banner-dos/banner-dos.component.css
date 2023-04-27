@@ -1,0 +1,52 @@
+.divBannerDos {
+  display: flex;
+  flex-direction: column;
+}
+
+.divDosBannerDos {
+  padding: 0.5rem;
+}
+
+.containerImages {
+  display: flex;
+  align-items: center;
+}
+
+.imagenBanner {
+  max-height: 200px;
+  width: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.fotoPerfil {
+  position: absolute;
+  width: 70px;
+  z-index: 2;
+  margin-left: 2rem;
+}
+
+.corchete {
+  font-size: 1.1em;
+}
+
+.acercaDe {
+  padding: 0.5rem;
+  border: 1px solid var(--color-gray);
+  border-radius: 10px;
+}
+
+@media only screen and (min-width: 600px) {
+  .fotoPerfil {
+    width: 150px;
+    margin-left: 6rem;
+  }
+
+  .acercaDe {
+    padding: 1rem;
+  }
+
+  .divDosBannerDos {
+    padding: 0 5% 2rem 5%;
+  }
+}

@@ -1,1 +1,25 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: Lato, Ubuntu, san sans-serif;
+  color: var(--color-darkGray);
+}
+
+:root {
+  --color-darkBlack: #242424;
+  --color-gray: gray;
+  --color-white: whitesmoke;
+  --color-blue: #0d6efd;
+  --color-darkGray: #343a40;
+  --color-orange: #fd7e14;
+  --color-yellow: #ffc107;
+  --color-green: #198754;
+}
+
+i {
+  cursor: pointer;
+}

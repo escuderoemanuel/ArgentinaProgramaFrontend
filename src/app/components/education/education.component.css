@@ -1,0 +1,30 @@
+.educacionContainer {
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.educacionContainerTab {
+  padding: 0.5rem;
+  border: 1px solid var(--color-gray);
+  border-radius: 10px;
+}
+
+.divEducacion {
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+}
+
+@media only screen and (min-width: 600px) {
+  .educacionContainerTab {
+    padding: 0.5rem 1rem;
+  }
+
+  .educacionContainer {
+    padding: 0 5% 2rem 5%;
+  }
+
+  .divEducacion {
+    flex-direction: row;
+  }
+}

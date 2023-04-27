@@ -1,0 +1,26 @@
+<!-- BANNER DOS -->
+<div *ngIf="usuario" class='divBannerDos'>
+  <div class='containerImages'>
+    <!-- BANNER -->
+    <img class="imagenBanner" src={{usuario.imagenBanner}} alt="Banner">
+    <!-- FOTO -->
+    <img class='fotoPerfil img-fluid' src={{usuario.fotoPerfil}} alt="Foto de Perfil del Portfolio">
+  </div>
+
+  <div class='divDosBannerDos d-flex justify-content-between'>
+    <div class='position-relative'>
+      <div class='nombreTitulo mb-4'>
+        <h1 class='mt-1 me-4 mb-0'>{{usuario.nombre}} {{usuario.apellido}}</h1>
+        <h5> <span class='corchete'>[</span> {{usuario.titulo}} <span class='corchete'>]</span></h5>
+      </div>
+
+      <div class='acercaDe'>
+        <h5>Acerca De</h5>
+        <p class=''>{{usuario.acercaDe}}</p>
+      </div>
+
+
+    </div>
+    <i class="fa-icon-light p-2 fa-solid fa-pencil position-absolute end-0 "></i>
+  </div>
+</div>
