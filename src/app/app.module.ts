@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { BannerUnoComponent } from './components/header/banner-uno/banner-uno.component';
 import { BannerDosComponent } from './components/header/banner-dos/banner-dos.component';
 import { EducationComponent } from './components/education/education.component';
+import { ExperienceComponent } from './components/experience/experience.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { EducationComponent } from './components/education/education.component';
     BannerUnoComponent,
     BannerDosComponent,
     EducationComponent,
+    ExperienceComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],

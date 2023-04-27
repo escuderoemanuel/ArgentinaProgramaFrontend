@@ -1,7 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Education } from 'src/app/models/educacion';
+import { Education } from 'src/app/models/education';
 import { EducationService } from 'src/app/services/education.service';
 
 @Component({
@@ -41,7 +41,6 @@ export class EducationComponent {
     container?.appendChild(button);
     button.click();
   }
-
 
   // Read --Get
   public getEducations(): void {

@@ -1,0 +1,30 @@
+.experienceContainer {
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.experienceContainerTab {
+  padding: 0.5rem;
+  border: 1px solid var(--color-gray);
+  border-radius: 10px;
+}
+
+.divExperience {
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+}
+
+@media only screen and (min-width: 600px) {
+  .experienceContainerTab {
+    padding: 0.5rem 1rem;
+  }
+
+  .experienceContainer {
+    padding: 0 5% 2rem 5%;
+  }
+
+  .divExperience {
+    flex-direction: row;
+  }
+}
