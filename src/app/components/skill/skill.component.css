@@ -1,40 +1,44 @@
-.educacionContainer {
+.skillContainer {
   padding: 0.5rem;
   margin-bottom: 0.5rem;
 }
 
-.educacionContainerTab {
+.skillContainerTab {
   padding: 0.5rem;
   border: 1px solid var(--color-gray);
   border-radius: 10px;
 }
 
-.divEducacion {
+.divSkill {
   display: flex;
   flex-direction: column;
   text-align: start;
+  align-items: center;
 }
 
-.logoEdu {
+.logoSkill {
   width: 16px;
   padding: 0;
   margin: 0;
 }
 
+.divSkillDos {
+  display: flex;
+  align-items: baseline;
+}
+
 @media only screen and (min-width: 900px) {
-  .educacionContainerTab {
+  .skillContainerTab {
     padding: 0.5rem 1rem;
   }
 
-  .divEducacion {
-    display: flex;
+  .divSkill {
     flex-direction: row;
-    justify-content: space-between;
   }
 }
 
 @media only screen and (min-width: 600px) {
-  .educacionContainer {
+  .skillContainer {
     padding: 0 5% 2rem 5%;
   }
 }

@@ -3,36 +3,36 @@
   <div class='text-center educacionContainerTab'>
 
     <!-- Btn Add -->
-    <button type="button" class="btn btn-success btn-edicion mb-2" (click)="onOpenModal('add')" data-bs-toggle="modal"
-      data-bs-target="#addEducationModal">Agregar
+    <button type="button" class="btn btn-primary btn-edicion mb-2 rounded-5" (click)="onOpenModal('add')"
+      data-bs-toggle="modal" data-bs-target="#addEducationModal">Agregar
     </button>
 
-    <div class='divEducacion row m-2 mb-3' *ngFor="let education of educations">
-      <div class="col-1">
-        <img src="{{education.imagenEdu}}" alt="Imagen Institución" width='20'>
+    <div class='divEducacion m-2 mb-3' *ngFor="let education of educations">
+      <div>
+        <img class='logoEdu' src="{{education.imagenEdu}}" alt="Imagen Institución" width='20'>
       </div>
-      <div class="col-3">
+      <div>
         {{education.tituloEdu}}
       </div>
-      <div class="col-2">
+      <div>
         {{education.fechaEdu}}
       </div>
-      <div class="col-4">
+      <div>
         {{education.descripcionEdu}}
       </div>
 
       <!-- Btn Edit -->
-      <div class='divEducacionBtn col text-center'>
-        <button (click)="onOpenModal('edit', education)" class='btn btn-primary tooltips me-1' data-placement='top'
+      <div class='divEducacionBtn text-start'>
+        <button (click)="onOpenModal('edit', education)" class='btn tooltips  btn-sm p-0 m-0' data-placement='top'
           data-bs-toggle='modal' data-original-title='Edit' data-bs-target="#editEducationModal">
-          <i class='fa fa-pencil'></i>
+          <i class="fa-solid fa-pen-to-square"></i>
         </button>
 
         <!-- Btn Delete -->
-        <button class='btn btn-secondary tooltips' data-placement='top' data-bs-toggle='modal'
+        <button class='btn tooltips  btn-sm' data-placement='top' data-bs-toggle='modal'
           data-bs-target="#deleteEducationModal" data-original-title='Delete'
           (click)="onOpenModal('delete', education)">
-          <i class='fa fa-close'></i>
+          <i class="fa-regular fa-circle-xmark"></i>
         </button>
       </div>
 
