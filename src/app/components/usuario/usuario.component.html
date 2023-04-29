@@ -1,0 +1,107 @@
+<!-- USUARIO -->
+<div *ngIf="usuario" class='divUsuario'>
+  <div class='containerImages'>
+    <!-- BANNER -->
+    <img class="imagenBanner" src={{usuario.imagenBanner}} alt="Banner">
+    <!-- FOTO -->
+    <img class='fotoPerfil img-fluid' src={{usuario.fotoPerfil}} alt="Foto de Perfil del Portfolio">
+  </div>
+
+  <div class='divDosUsuario d-flex justify-content-between'>
+    <div class='position-relative'>
+      <div class='nombreTitulo mb-4'>
+        <h1 class='mt-1 me-4 mb-0'>{{usuario.nombre}} {{usuario.apellido}}</h1>
+        <h5> <span class='corchete'>[</span> {{usuario.titulo}} <span class='corchete'>]</span></h5>
+      </div>
+
+      <div class='acercaDe'>
+        <h5>Acerca De</h5>
+        <p class=''>{{usuario.acercaDe}}</p>
+      </div>
+
+      <!-- Btn Edit -->
+      <div class='divUsuarioBtn text-start'>
+        <button (click)="onOpenModal('edit', usuario)" class='btn tooltips btn-sm p-0 m-0' data-placement='top'
+          data-bs-toggle='modal' data-original-title='Edit' data-bs-target="#editUsuarioModal">
+          <i class="fa-solid fa-pen-to-square position-absolute end-0"></i>
+        </button>
+      </div>
+    </div>
+
+
+    <!-- MODAL EDITAR -->
+    <div class="modal fade" id="editUsuarioModal" tabindex="-1" role="dialog" aria-labelledby="usuarioEditModalLabel"
+      aria-hidden="true">
+      <!-- Modal Título -->
+      <div class="modal-dialog text-start" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="updateUsuarioModalLabel">Editar Usuario</h5>
+            <button type='button' class='btn-close' data-bs-dismiss="modal" aria-label='Close'>
+            </button>
+          </div>
+
+          <!-- Form -->
+          <div class="modal-body">
+            <form #editForm="ngForm">
+              <!-- ID -->
+              <input type="hidden" ngModel="{{editUsuario?.id}}" name="id" class="form-control" id="id"
+                placeholder="id">
+              <!-- Nombre -->
+              <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input type="text" ngModel="{{editUsuario?.nombre}}" name="nombre" class="form-control" id="nombre"
+                  aria-describedby="emailHelp" placeholder="Nombre">
+              </div>
+
+              <!-- Apellido -->
+              <div class="form-group">
+                <label for="apellido">Apellido</label>
+                <input type="text" ngModel="{{editUsuario?.apellido}}" name="apellido" class="form-control"
+                  id="apellido" aria-describedby="emailHelp" placeholder="Apellido">
+              </div>
+
+              <!-- Título -->
+              <div class="form-group">
+                <label for="titulo">Título</label>
+                <input type="text" ngModel="{{editUsuario?.titulo}}" name="titulo" class="form-control" id="titulo"
+                  aria-describedby="emailHelp" placeholder="Título">
+              </div>
+
+              <!-- AcercaDe -->
+              <div class="form-group">
+                <label for="AcercaDe">Acerca De</label>
+                <input type="text" ngModel="{{editUsuario?.acercaDe}}" name="acercaDe" class="form-control"
+                  id="acercaDe" aria-describedby="emailHelp" placeholder="Acerca De">
+              </div>
+
+              <!-- fotoPerfil -->
+              <div class="form-group">
+                <label for="fotoPerfil">URL Foto de Perfil</label>
+                <input type="text" ngModel="{{editUsuario?.fotoPerfil}}" name="fotoPerfil" class="form-control"
+                  id="fotoPerfil" aria-describedby="emailHelp" placeholder="URL Foto de Perfil">
+              </div>
+
+              <!-- imagenBanner -->
+              <div class="form-group">
+                <label for="imagenBanner">URL Banner</label>
+                <input type="text" ngModel="{{editUsuario?.imagenBanner}}" name="imagenBanner" class="form-control"
+                  id="imagenBanner" aria-describedby="emailHelp" placeholder="URL Banner">
+              </div>
+
+
+              <!-- Cancelar -->
+              <div class="modal-footer">
+                <button type="button" data-bs-dismiss="modal" class="btn btn-danger ">Cancelar</button>
+                <!-- Guardar Cambios -->
+                <button (click)="onUpdateUsuario(editForm.value)" data-bs-dismiss="modal"
+                  class="btn btn-primary">Guardar
+                  Cambios</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>

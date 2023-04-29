@@ -1,9 +1,9 @@
-.divBannerDos {
+.divUsuario {
   display: flex;
   flex-direction: column;
 }
 
-.divDosBannerDos {
+.divDosUsuario {
   padding: 0.5rem;
 }
 
@@ -46,7 +46,7 @@
     padding: 1rem;
   }
 
-  .divDosBannerDos {
+  .divDosUsuario {
     padding: 0 5% 2rem 5%;
   }
 }

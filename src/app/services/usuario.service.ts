@@ -7,7 +7,7 @@ import { Usuario } from '../models/usuario';
 @Injectable({
   providedIn: 'root',
 })
-export class HeaderService {
+export class UsuarioService {
   // Guarda la dirección de la apiUrl
   private apiServerUrl = environment.apiUrl;
 
@@ -21,6 +21,9 @@ export class HeaderService {
 
   // Método update (Update)
   public updateUsuario(usuario: Usuario): Observable<Usuario> {
-    return this.http.put<Usuario>(`${this.apiServerUrl}/update`, usuario);
+    return this.http.put<Usuario>(
+      `${this.apiServerUrl}/usuario/update`,
+      usuario
+    );
   }
 }
