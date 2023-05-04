@@ -9,17 +9,15 @@
     </button>
 
     <div class='divEducacion m-2 mb-3' *ngFor="let education of educations">
-      <div>
-        <img class='logoEdu' src="{{education.imagenEdu}}" alt="Imagen Institución" width='20'>
-      </div>
-      <div>
+      <div class='row align-items-center'>
+        <img class='me-2 logoEdu' src="{{education.imagenEdu}}" alt="Imagen Institución" width='20'>
         {{education.tituloEdu}}
       </div>
       <div>
-        {{education.fechaEdu}}
+        • {{education.fechaEdu}}
       </div>
       <div>
-        {{education.descripcionEdu}}
+        • {{education.descripcionEdu}}
       </div>
 
       <!-- Btn Edit -->

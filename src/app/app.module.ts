@@ -11,6 +11,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { SkillComponent } from './components/skill/skill.component';
 import { ProjectComponent } from './components/project/project.component';
 import { UsuarioComponent } from './components/usuario/usuario.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { UsuarioComponent } from './components/usuario/usuario.component';
     SkillComponent,
     ProjectComponent,
     UsuarioComponent,
+    LoginComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],

@@ -16,7 +16,7 @@ export class ExperienceComponent {
 
   constructor(private experienceService: ExperienceService) {}
 
-  // Para traer educaciones
+  // Para traer experiencias
   ngOnInit(): void {
     this.getExperiences();
   }

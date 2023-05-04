@@ -13,7 +13,7 @@
   display: flex;
   flex-direction: column;
   text-align: start;
-  align-items: start;
+  border-bottom: 1px solid var(--color-gray);
 }
 
 .logoExp {
@@ -28,7 +28,9 @@
   }
 
   .divExperience {
+    display: flex;
     flex-direction: row;
+    justify-content: space-between;
   }
 }
 

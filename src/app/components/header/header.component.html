@@ -1,6 +1,6 @@
 <!-- BANNER -->
 <div class="banner">
-
+  <app-login></app-login>
   <img class='iconArgProg' src='{{banner.imgInstitucional}}' alt="Logotipo Argentina Programa">
   <div class='socialIcons'>
     <a href="https://www.linkedin.com/in/emanuel-escudero-657675b7/" nonopener nonreferrer target='_blank'>
@@ -12,8 +12,11 @@
     <a href='mailto:escudero.mdz@gmail.com' nonopener nonreferrer target='_blank'>
       <img class='icons me-2' src={{banner.iconEmail}} alt="Icono de Email">
     </a>
+
+    <!-- LOGIN -->
     <a href="#" nonopener nonreferrer>
-      <button type="button" class="btnIngresar  btn btn-primary ">Entrar</button>
+      <button type="button" class="btnIngresar  btn btn-primary " data-bs-toggle="modal" data-bs-target="#login"
+        (click)="login()">Entrar</button>
     </a>
   </div>
 </div>
