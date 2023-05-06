@@ -9,10 +9,6 @@ import { Router } from '@angular/router';
 export class HeaderComponent {
   constructor(private router: Router) {}
 
-  login() {
-    this.router.navigate(['./login']);
-  }
-
   banner: {
     imgInstitucional: string;
     iconLinkedIn: string;
