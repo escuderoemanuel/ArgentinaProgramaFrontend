@@ -1,6 +1,5 @@
 <!-- BANNER -->
 <div class="banner">
-  <app-login></app-login>
   <img class='iconArgProg' src='{{banner.imgInstitucional}}' alt="Logotipo Argentina Programa">
   <div class='socialIcons'>
     <a href="https://www.linkedin.com/in/emanuel-escudero-657675b7/" nonopener nonreferrer target='_blank'>
@@ -13,10 +12,38 @@
       <img class='icons me-2' src={{banner.iconEmail}} alt="Icono de Email">
     </a>
 
-    <!-- LOGIN -->
-    <a href="#" nonopener nonreferrer>
-      <button type="button" class="btnIngresar  btn btn-primary " data-bs-toggle="modal" data-bs-target="#login"
-        (click)="login()">Entrar</button>
-    </a>
+    <!-- Button modal -->
+    <button type="button" class="btnIngresar btn btn-primary" data-bs-toggle="modal" data-bs-target="#login">
+      Entrar
+    </button>
+    <!-- Modal -->
+    <div class="modal fade" id="login" tabindex="-1" aria-labelledby="loginLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="loginLabel">Entrar</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <!--  Modal Body -->
+          <div class="modal-body text-center">
+
+            <div class="form-outline mb-2">
+              <input type="email" id="typeEmailX-2" class="form-control form-control-lg" required />
+              <label class="form-label" for="typeEmailX-2">Email</label>
+            </div>
+
+            <div class="form-outline mb-2">
+              <input type="password" id="typePasswordX-2" class="form-control form-control-lg" required />
+              <label class="form-label" for="typePasswordX-2">Password</label>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">Entrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>
