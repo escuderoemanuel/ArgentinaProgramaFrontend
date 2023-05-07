@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthServiceService } from 'src/app/services/auth-service.service';
 
 @Component({
   selector: 'app-header',
@@ -22,28 +23,28 @@ export class HeaderComponent implements OnInit {
   /* FIN Variables fijas del Header */
 
   /* Variables y funciones del Login */
+  isLoggedIn: boolean = false;
 
   btnModalText: string = 'Entrar';
-  isLoggedIn: boolean = false;
-  btnSalir = document.getElementById('salir');
-  btnEntrar = document.getElementById('entrar');
+
+  constructor(
+    private router: Router,
+    private authService: AuthServiceService
+  ) {}
 
   ngOnInit() {
-    console.log(this.isLoggedIn);
+    this.authService.isLoggedIn$.subscribe((isLoggedIn) => {
+      if (isLoggedIn) {
+        this.btnModalText = 'Salir';
+      } else {
+        this.btnModalText = 'Entrar';
+      }
+    });
   }
 
   salir() {
+    this.authService.setIsLoggedIn(false);
     window.location.reload();
-  }
-
-  botones(): any {
-    if (this.isLoggedIn === false) {
-      this.btnSalir?.classList.add('invisible');
-      // btn salir invisible
-    } else {
-      // el btn entrar invisible
-      this.btnEntrar?.classList.add('invisible');
-    }
   }
 
   checkLogin(): boolean {
@@ -67,10 +68,8 @@ export class HeaderComponent implements OnInit {
       }
     }
     console.log(isLoggedIn);
-    this.isLoggedIn = isLoggedIn;
-    this.botones();
+    this.authService.setIsLoggedIn(isLoggedIn);
     return isLoggedIn;
   }
   /* Fin Variables y funciones del Login */
-  constructor(private router: Router) {}
 }

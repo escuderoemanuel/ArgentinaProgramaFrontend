@@ -4,7 +4,7 @@
   <div class='text-center experienceContainerTab'>
 
     <!-- Btn Add -->
-    <button type="button" class="btn btn-primary btn-edicion mb-2 rounded-5" (click)="onOpenModal('add')"
+    <button *ngIf="!authService.isLoggedIn$" type="button" class="btn btn-primary btn-edicion mb-2 rounded-5" (click)="onOpenModal('add')"
       data-bs-toggle="modal" data-bs-target="#addExperienceModal">Agregar
     </button>
 
@@ -21,7 +21,7 @@
       </div>
 
       <!-- Btn Edit -->
-      <div class='divExperienceBtn text-start'>
+      <div *ngIf="!authService.isLoggedIn$" class='divExperienceBtn text-start'>
         <button (click)="onOpenModal('edit', experience)" class='btn tooltips  btn-sm p-0 m-0' data-placement='top'
           data-bs-toggle='modal' data-original-title='Edit' data-bs-target="#editExperienceModal">
           <i class="fa-solid fa-pen-to-square"></i>

@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Education } from 'src/app/models/education';
 import { EducationService } from 'src/app/services/education.service';
+import { AuthServiceService } from 'src/app/services/auth-service.service';
 
 @Component({
   selector: 'app-education',
@@ -14,7 +15,10 @@ export class EducationComponent {
   public editEducation: Education | undefined;
   public deleteEducation: Education | undefined;
 
-  constructor(private educationService: EducationService) {}
+  constructor(
+    private educationService: EducationService,
+    public authService: AuthServiceService
+  ) {}
 
   // Para traer educaciones
   ngOnInit(): void {

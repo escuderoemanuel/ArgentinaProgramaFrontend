@@ -20,7 +20,7 @@
       </div>
 
       <!-- Btn Edit -->
-      <div class='divUsuarioBtn text-start'>
+      <div *ngIf="!authService.isLoggedIn$" class='divUsuarioBtn text-start'>
         <button (click)="onOpenModal('edit', usuario)" class='btn tooltips btn-sm p-0 m-0' data-placement='top'
           data-bs-toggle='modal' data-original-title='Edit' data-bs-target="#editUsuarioModal">
           <i class="fa-solid fa-pen-to-square position-absolute end-0"></i>

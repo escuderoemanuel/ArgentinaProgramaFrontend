@@ -3,6 +3,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { NgForm } from '@angular/forms';
 import { Project } from 'src/app/models/project';
 import { ProjectService } from 'src/app/services/project.service';
+import { AuthServiceService } from 'src/app/services/auth-service.service';
 
 @Component({
   selector: 'app-project',
@@ -14,7 +15,10 @@ export class ProjectComponent {
   public editProject: Project | undefined;
   public deleteProject: Project | undefined;
 
-  constructor(private projectService: ProjectService) {}
+  constructor(
+    private projectService: ProjectService,
+    public authService: AuthServiceService
+  ) {}
 
   // Para traer Projects
   ngOnInit(): void {

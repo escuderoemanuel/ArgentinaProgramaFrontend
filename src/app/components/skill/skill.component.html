@@ -4,8 +4,8 @@
   <div class='text-center skillContainerTab'>
 
     <!-- Btn Add -->
-    <button type="button" class="btn btn-primary btn-edicion mb-2 rounded-5" (click)="onOpenModal('add')"
-      data-bs-toggle="modal" data-bs-target="#addSkillModal">Agregar
+    <button *ngIf="!authService.isLoggedIn$" type="button" class="btn btn-primary btn-edicion mb-2 rounded-5"
+      (click)="onOpenModal('add')" data-bs-toggle="modal" data-bs-target="#addSkillModal">Agregar
     </button>
 
     <div class='divSkill row m-2 mb-3' *ngFor="let skill of skills">
@@ -27,7 +27,7 @@
 
 
         <!-- Btn Edit -->
-        <div class='divSkillBtn col-2 text-center'>
+        <div *ngIf="!authService.isLoggedIn$" class='divSkillBtn col-2 text-center'>
           <button (click)="onOpenModal('edit', skill)" class='btn tooltips me-1 btn-sm pe-0 p-0' data-placement='top'
             data-bs-toggle='modal' data-original-title='Edit' data-bs-target="#editSkillModal">
             <i class="fa-solid fa-pen-to-square"></i>

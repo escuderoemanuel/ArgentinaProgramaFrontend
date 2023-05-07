@@ -3,6 +3,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { NgForm } from '@angular/forms';
 import { Skill } from 'src/app/models/skill';
 import { SkillService } from 'src/app/services/skill.service';
+import { AuthServiceService } from 'src/app/services/auth-service.service';
 
 @Component({
   selector: 'app-skill',
@@ -14,7 +15,10 @@ export class SkillComponent {
   public editSkill: Skill | undefined;
   public deleteSkill: Skill | undefined;
 
-  constructor(private skillService: SkillService) {}
+  constructor(
+    private skillService: SkillService,
+    public authService: AuthServiceService
+  ) {}
 
   // Para traer Skills
   ngOnInit(): void {
