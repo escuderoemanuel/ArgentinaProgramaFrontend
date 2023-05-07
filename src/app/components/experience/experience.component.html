@@ -5,10 +5,10 @@
 
     <!-- Btn Add -->
     <div class='d-flex justify-content-end'>
-    <button *ngIf="isLoggedIn" type="button" class="btn btn-success btn-edicion mb-2 rounded-5"
-      (click)="onOpenModal('add')" data-bs-toggle="modal" data-bs-target="#addExperienceModal">Agregar
-    </button>
-  </div>
+      <button *ngIf="isLoggedIn" type="button" class="btn btn-success btn-edicion mb-2 rounded-5"
+        (click)="onOpenModal('add')" data-bs-toggle="modal" data-bs-target="#addExperienceModal">Agregar
+      </button>
+    </div>
     <!-- Tabla -->
     <table class='divExperience' *ngFor="let experience of experiences">
       <!-- Cada experiencia es una row -->
@@ -17,7 +17,9 @@
           <img class='me-2 mt-1 logoExp' src="{{experience.imagenExp}}" alt="Imagen Institución" height='18' width=auto>
           {{experience.tituloExp}}
         </th>
-
+        <td class='row ps-4'>
+          {{experience.lugarExp}}
+        </td>
         <td class='row ps-4'>
           {{experience.fechaDesdeExp}}-{{experience.fechaHastaExp}}
         </td>
@@ -63,6 +65,12 @@
                 <label for="tituloExp" class='col-form-label ps-2'>Título:</label>
                 <input type="text" ngModel name='tituloExp' class='form-control' id='tituloExp' placeholder='Título'
                   required>
+              </div>
+              <!-- Lugar -->
+              <div class="mb-3">
+                <label for="lugarExp" class='col-form-label ps-2'>Lugar</label>
+                <input type="message-text" ngModel name='lugarExp' class='form-control' id='lugarExp'
+                  placeholder='Lugar de Trabajo' required>
               </div>
 
               <!-- Fecha Desde -->
@@ -123,23 +131,23 @@
             <button type='button' class='btn-close' data-bs-dismiss="modal" aria-label='Close'>
             </button>
           </div>
-          <!-- Titulo -->
+          <!-- Modal -->
           <div class="modal-body">
             <form #editForm="ngForm">
+              <!-- ID -->
+              <input type="hidden" ngModel="{{editExperience?.idExp}}" name="idExp" class="form-control" id="idExp"
+                placeholder="ID">
+              <!-- Titulo -->
               <div class="form-group">
                 <label for="tituloExp">Titulo</label>
                 <input type="text" ngModel="{{editExperience?.tituloExp}}" name="tituloExp" class="form-control"
                   id="tituloExp" aria-describedby="emailHelp" placeholder="Titulo">
               </div>
-
-              <!-- ID -->
-              <input type="hidden" ngModel="{{editExperience?.idExp}}" name="idExp" class="form-control" id="idExp"
-                placeholder="ID">
-
+              <!-- Lugar -->
               <div class="form-group">
-                <label for="descripcionExp">Descripción</label>
-                <input type="text" ngModel="{{editExperience?.descripcionExp}}" name="descripcionExp"
-                  class="form-control" id="descripcionExp" placeholder="descripcionExp">
+                <label for="lugarExp">Lugar</label>
+                <input type="text" ngModel="{{editExperience?.lugarExp}}" name="lugarExp" class="form-control"
+                  id="lugarExp" aria-describedby="emailHelp" placeholder="Lugar">
               </div>
 
               <!-- Fecha Desde-->
@@ -153,6 +161,14 @@
                 <label for="fechaHastaExp">Fecha Hasta</label>
                 <input type="text" ngModel="{{editExperience?.fechaHastaExp}}" name="fechaHastaExp" class="form-control"
                   id="fechaHastaExp" placeholder="Fecha Hasta">
+              </div>
+
+              <!-- Descripción -->
+              <div class="form-group">
+                <label for="descripcionExp">Descripción</label>
+                <textarea type="text" ngModel="{{editExperience?.descripcionExp}}" name="descripcionExp"
+                  class="form-control" id="descripcionExp" aria-describedby="emailHelp" placeholder="Descripción">
+                </textarea>
               </div>
 
               <!-- Img -->

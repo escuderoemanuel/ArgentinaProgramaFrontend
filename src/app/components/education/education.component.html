@@ -12,12 +12,14 @@
     <!-- Tabla -->
     <table class='divEducacion' *ngFor="let education of educations">
       <!-- Cada educación es una row -->
-      <tr class='col'>
+      <tr class='col '>
         <th class='row'>
-          <img class='me-2 mt-1 logoEdu' src="{{education.imagenEdu}}" alt="Imagen Institución" height='18' width=auto>
+          <img class='me-2 mt-1 logoEdu rounded-1' src="{{education.imagenEdu}}" alt="Imagen Institución">
           {{education.tituloEdu}}
         </th>
-
+        <td class='row ps-4'>
+          {{education.lugarEdu}}
+        </td>
         <td class='row ps-4'>
           {{education.fechaEdu}}
         </td>
@@ -59,6 +61,13 @@
               <div class="mb-3">
                 <label for="tituloEdu" class='col-form-label ps-2'>Título:</label>
                 <input type="text" ngModel name='tituloEdu' class='form-control' id='tituloEdu' placeholder='Título'
+                  required>
+              </div>
+
+              <!-- Lugar -->
+              <div class="mb-3">
+                <label for="lugarEdu" class='col-form-label ps-2'>Institución</label>
+                <input type="text" ngModel name='lugarEdu' class='form-control' id='lugarEdu' placeholder='Fecha'
                   required>
               </div>
 
@@ -124,7 +133,13 @@
               <!-- ID -->
               <input type="hidden" ngModel="{{editEducation?.idEdu}}" name="idEdu" class="form-control" id="idEdu"
                 placeholder="idEdu">
-
+              <!-- Lugar -->
+              <div class="form-group">
+                <label for="lugarEdu">Institución</label>
+                <input type="text" ngModel="{{editEducation?.lugarEdu}}" name="lugarEdu" class="form-control"
+                  id="lugarEdu" placeholder="Institución">
+              </div>
+              <!-- Descripción -->
               <div class="form-group">
                 <label for="descripcionEdu">Descripción</label>
                 <input type="text" ngModel="{{editEducation?.descripcionEdu}}" name="descripcionEdu"
@@ -132,7 +147,7 @@
               </div>
               <!-- Fecha  -->
               <div class="form-group">
-                <label for="fechaEdu">Star title</label>
+                <label for="fechaEdu">Fecha</label>
                 <input type="text" ngModel="{{editEducation?.fechaEdu}}" name="fechaEdu" class="form-control"
                   id="fechaEdu" placeholder="fechaEdu">
               </div>

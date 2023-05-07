@@ -60,7 +60,7 @@ export class UsuarioComponent implements OnInit {
     document.getElementById('edit-usuario-form')?.click();
     this.usuarioService.updateUsuario(usuario).subscribe({
       next: (response: Usuario) => {
-        console.log(response);
+       // console.log(response);
         this.getUsuario();
       },
       error: (error: HttpErrorResponse) => {

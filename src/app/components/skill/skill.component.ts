@@ -67,7 +67,7 @@ export class SkillComponent implements OnInit{
     document.getElementById('add-skill-form')?.click();
     this.skillService.addSkill(addForm.value).subscribe({
       next: (response: Skill) => {
-        console.log(response);
+        //console.log(response);
         this.getSkills();
         addForm.reset();
       },
@@ -84,7 +84,7 @@ export class SkillComponent implements OnInit{
     document.getElementById('edit-skill-form')?.click();
     this.skillService.updateSkill(skill).subscribe({
       next: (response: Skill) => {
-        console.log(response);
+        //console.log(response);
         this.getSkills();
       },
       error: (error: HttpErrorResponse) => {
@@ -97,7 +97,7 @@ export class SkillComponent implements OnInit{
   public onDeleteSkill(idSkill: number): void {
     this.skillService.deleteSkill(idSkill).subscribe({
       next: (response: void) => {
-        console.log(response);
+        //console.log(response);
         this.getSkills();
       },
       error: (error: HttpErrorResponse) => {

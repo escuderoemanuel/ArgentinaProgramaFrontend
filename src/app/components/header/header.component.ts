@@ -30,7 +30,7 @@ export class HeaderComponent implements OnInit {
   constructor(private router: Router, public authService: AuthService) {}
 
   ngOnInit() {
-    console.log(this.isLoggedIn);
+    //console.log(this.isLoggedIn);
     this.authService.setIsLoggedIn(this.isLoggedIn);
     this.authService.isLoggedIn$.subscribe((isLoggedIn) => {
       if (isLoggedIn) {
@@ -67,7 +67,7 @@ export class HeaderComponent implements OnInit {
         passwordInput.value = '';
       }
     }
-    console.log(isLoggedIn);
+    //console.log(isLoggedIn);
     this.authService.setIsLoggedIn(isLoggedIn);
     return isLoggedIn;
   }

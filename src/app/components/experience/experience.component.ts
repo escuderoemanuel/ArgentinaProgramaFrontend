@@ -67,7 +67,7 @@ export class ExperienceComponent implements OnInit {
     document.getElementById('add-experience-form')?.click();
     this.experienceService.addExperience(addForm.value).subscribe({
       next: (response: Experience) => {
-        console.log(response);
+        //console.log(response);
         this.getExperiences();
         addForm.reset();
       },
@@ -84,7 +84,7 @@ export class ExperienceComponent implements OnInit {
     document.getElementById('edit-experience-form')?.click();
     this.experienceService.updateExperience(experience).subscribe({
       next: (response: Experience) => {
-        console.log(response);
+        //console.log(response);
         this.getExperiences();
       },
       error: (error: HttpErrorResponse) => {
@@ -97,7 +97,7 @@ export class ExperienceComponent implements OnInit {
   public onDeleteExperience(idExp: number): void {
     this.experienceService.deleteExperience(idExp).subscribe({
       next: (response: void) => {
-        console.log(response);
+        //console.log(response);
         this.getExperiences();
       },
       error: (error: HttpErrorResponse) => {

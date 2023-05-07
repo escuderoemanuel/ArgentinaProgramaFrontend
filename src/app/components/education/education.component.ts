@@ -67,7 +67,7 @@ export class EducationComponent implements OnInit {
     document.getElementById('add-education-form')?.click();
     this.educationService.addEducation(addForm.value).subscribe({
       next: (response: Education) => {
-        console.log(response);
+        //console.log(response);
         this.getEducations();
         addForm.reset();
       },
@@ -84,7 +84,7 @@ export class EducationComponent implements OnInit {
     document.getElementById('edit-education-form')?.click();
     this.educationService.updateEducation(education).subscribe({
       next: (response: Education) => {
-        console.log(response);
+        //console.log(response);
         this.getEducations();
       },
       error: (error: HttpErrorResponse) => {
@@ -97,7 +97,7 @@ export class EducationComponent implements OnInit {
   public onDeleteEducation(idEdu: number): void {
     this.educationService.deleteEducation(idEdu).subscribe({
       next: (response: void) => {
-        console.log(response);
+        //console.log(response);
         this.getEducations();
       },
       error: (error: HttpErrorResponse) => {

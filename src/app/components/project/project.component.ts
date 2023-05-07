@@ -67,7 +67,7 @@ export class ProjectComponent implements OnInit {
     document.getElementById('add-project-form')?.click();
     this.projectService.addProject(addForm.value).subscribe({
       next: (response: Project) => {
-        console.log(response);
+        //console.log(response);
         this.getProjects();
         addForm.reset();
       },
@@ -84,7 +84,7 @@ export class ProjectComponent implements OnInit {
     document.getElementById('edit-project-form')?.click();
     this.projectService.updateProject(project).subscribe({
       next: (response: Project) => {
-        console.log(response);
+        //console.log(response);
         this.getProjects();
       },
       error: (error: HttpErrorResponse) => {
@@ -97,7 +97,7 @@ export class ProjectComponent implements OnInit {
   public onDeleteProject(idProyecto: number): void {
     this.projectService.deleteProject(idProyecto).subscribe({
       next: (response: void) => {
-        console.log(response);
+        //console.log(response);
         this.getProjects();
       },
       error: (error: HttpErrorResponse) => {
