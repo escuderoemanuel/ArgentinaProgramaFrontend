@@ -3,33 +3,33 @@
   <h4>Proyectos</h4>
   <div class='text-center proyectoContainerTab'>
     <!-- Btn Add -->
-    <button *ngIf="isLoggedIn" type="button" class="btn btn-primary btn-edicion mb-2 rounded-5" (click)="onOpenModal('add')"
-      data-bs-toggle="modal" data-bs-target="#addProjectModal">Agregar
-    </button>
+    <div class='d-flex justify-content-end'>
+      <button *ngIf="isLoggedIn" type="button" class="btn btn-success btn-edicion mb-2 rounded-5"
+        (click)="onOpenModal('add')" data-bs-toggle="modal" data-bs-target="#addProjectModal">Agregar
+      </button>
+    </div>
 
-    <div class=' d-flex flex-wrap gap-4 justify-content-center'>
-      <div class="card mb-3" style="max-width: 540px;" *ngFor="let project of projects">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img src={{project.imagenProyecto}} class="img-fluid rounded-start"
-              alt="Imagen del proyecto {{project.nombreProyecto}}">
-          </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title">{{project.nombreProyecto}}</h5>
-              <p class="card-text mb-0"><small class="text-body-secondary ">{{project.tipoProyecto}}</small>
-              </p>
-              <p class="card-text mb-1"> {{project.toolsProyecto}} </p>
-
+    <div class='d-flex flex-wrap gap-4 justify-content-center'>
+      <div class="card mb-2" style="max-width: 320px;" *ngFor="let project of projects">
+        <div class="col g-0">
+          <img src={{project.imagenProyecto}} class="img-fluid rounded-start  border-bottom"
+            alt="Imagen del proyecto {{project.nombreProyecto}}">
+          <div class="card-body p-2">
+            <h4 class="card-title">{{project.nombreProyecto}}</h4>
+            <p class="card-text mb-0"><small class="text-body-secondary ">{{project.tipoProyecto}}</small>
+            </p>
+            <p class="card-text mb-2"> {{project.toolsProyecto}} </p>
+            <!-- Botones Repo y Demo -->
+            <div class='mb-0'>
               <a href={{project.urlRepoProyecto}} nonopener nonreferrer target='_blank'><button type="button"
                   class="btn btn-primary me-1">Repository</button></a>
               <a href={{project.urlDemoProyecto}} nonopener nonreferrer target='_blank'><button type="button"
                   class="btn btn-dark">Deploy</button></a>
             </div>
-
           </div>
-          <!-- Btn Edit -->
-          <div *ngIf="isLoggedIn" class='divProjectBtn text-start'>
+
+          <!-- Botones Edit -->
+          <div *ngIf="isLoggedIn" class='divProjectBtn text-end'>
             <button (click)="onOpenModal('edit', project)" class='btn tooltips  btn-sm p-0 m-0' data-placement='top'
               data-bs-toggle='modal' data-original-title='Edit' data-bs-target="#editProjectModal">
               <i class="fa-solid fa-pen-to-square"></i>

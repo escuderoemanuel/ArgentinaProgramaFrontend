@@ -1,7 +1,7 @@
 .banner {
   background-color: var(--color-darkGray);
   height: 50px;
-  padding: 1rem 0.5rem;
+  padding: 1rem 2%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -37,7 +37,15 @@
 
 @media only screen and (min-width: 600px) {
   .banner {
-    padding: 1rem 5rem;
+    padding: 1rem 8% 1rem 8%;
+    display: flex;
+    align-items: center;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .banner {
+    padding: 1rem 15% 1rem 15%;
     display: flex;
     align-items: center;
   }

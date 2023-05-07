@@ -13,7 +13,7 @@
   display: flex;
   flex-direction: column;
   text-align: start;
-  align-items: center;
+  align-items: start;
 }
 
 .logoSkill {
@@ -27,18 +27,22 @@
   align-items: baseline;
 }
 
+@media only screen and (min-width: 600px) {
+  .skillContainer {
+    padding: 0 8% 2rem 8%;
+  }
+}
+
 @media only screen and (min-width: 900px) {
+  .skillContainer {
+    padding: 0 15% 2rem 15%;
+  }
+
   .skillContainerTab {
     padding: 0.5rem 1rem;
   }
 
   .divSkill {
     flex-direction: row;
-  }
-}
-
-@media only screen and (min-width: 600px) {
-  .skillContainer {
-    padding: 0 5% 2rem 5%;
   }
 }

@@ -4,37 +4,43 @@
   <div class='text-center experienceContainerTab'>
 
     <!-- Btn Add -->
-    <button *ngIf="isLoggedIn" type="button" class="btn btn-primary btn-edicion mb-2 rounded-5" (click)="onOpenModal('add')"
-      data-bs-toggle="modal" data-bs-target="#addExperienceModal">Agregar
+    <div class='d-flex justify-content-end'>
+    <button *ngIf="isLoggedIn" type="button" class="btn btn-success btn-edicion mb-2 rounded-5"
+      (click)="onOpenModal('add')" data-bs-toggle="modal" data-bs-target="#addExperienceModal">Agregar
     </button>
+  </div>
+    <!-- Tabla -->
+    <table class='divExperience' *ngFor="let experience of experiences">
+      <!-- Cada experiencia es una row -->
+      <tr class='col'>
+        <th class='row'>
+          <img class='me-2 mt-1 logoExp' src="{{experience.imagenExp}}" alt="Imagen Institución" height='18' width=auto>
+          {{experience.tituloExp}}
+        </th>
 
-    <div class='divExperience m-2 mb-3' *ngFor="let experience of experiences">
-      <div class='row align-items-center'>
-        <img class='me-2 logoExp' src="{{experience.imagenExp}}" alt="Imagen Institución" width='20'>
-        {{experience.tituloExp}}
-      </div>
-      <div>
-        • {{experience.fechaDesdeExp}}-{{experience.fechaHastaExp}}
-      </div>
-      <div>
-        • {{experience.descripcionExp}}
-      </div>
+        <td class='row ps-4'>
+          {{experience.fechaDesdeExp}}-{{experience.fechaHastaExp}}
+        </td>
+        <td class='row ps-4'>
+          {{experience.descripcionExp}}
+        </td>
 
-      <!-- Btn Edit -->
-      <div *ngIf="isLoggedIn" class='divExperienceBtn text-start'>
-        <button (click)="onOpenModal('edit', experience)" class='btn tooltips  btn-sm p-0 m-0' data-placement='top'
-          data-bs-toggle='modal' data-original-title='Edit' data-bs-target="#editExperienceModal">
-          <i class="fa-solid fa-pen-to-square"></i>
-        </button>
+        <!-- Btn Edit -->
+        <td *ngIf="isLoggedIn" class='divExperienceBtn d-flex justify-content-end'>
+          <button (click)="onOpenModal('edit', experience)" class='btn tooltips  btn-sm p-0 m-0' data-placement='top'
+            data-bs-toggle='modal' data-original-title='Edit' data-bs-target="#editExperienceModal">
+            <i class="fa-solid fa-pen-to-square"></i>
+          </button>
 
-        <!-- Btn Delete -->
-        <button class='btn tooltips  btn-sm' data-placement='top' data-bs-toggle='modal'
-          data-bs-target="#deleteExperienceModal" data-original-title='Delete'
-          (click)="onOpenModal('delete', experience)">
-          <i class="fa-regular fa-circle-xmark"></i>
-        </button>
-      </div>
-    </div>
+          <!-- Btn Delete -->
+          <button class='btn tooltips  btn-sm' data-placement='top' data-bs-toggle='modal'
+            data-bs-target="#deleteExperienceModal" data-original-title='Delete'
+            (click)="onOpenModal('delete', experience)">
+            <i class="fa-regular fa-circle-xmark"></i>
+          </button>
+        </td>
+      </tr>
+    </table>
 
 
     <!-- MODAL CREAR -->
@@ -204,4 +210,3 @@
       </div>
     </div>
   </div>
-</div>

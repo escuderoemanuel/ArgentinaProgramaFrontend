@@ -15,7 +15,7 @@
 
     <button *ngIf="!isLoggedIn" type="button" class="btnIngresar btn btn-primary" data-bs-toggle="modal"
       data-bs-target="#login" id='entrar'> {{btnModalText}} </button>
-    <button *ngIf="isLoggedIn" type="button" class="btnIngresar btn btn-primary " data-bs-toggle="modal"
+    <button *ngIf="isLoggedIn" type="button" class="btnIngresar btn btn-danger" data-bs-toggle="modal"
       data-bs-target="#login" id='salir' (click)="salir()"> Salir </button>
 
 

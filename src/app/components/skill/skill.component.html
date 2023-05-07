@@ -4,21 +4,20 @@
   <div class='text-center skillContainerTab'>
 
     <!-- Btn Add -->
-    <button *ngIf="isLoggedIn" type="button" class="btn btn-primary btn-edicion mb-2 rounded-5"
-      (click)="onOpenModal('add')" data-bs-toggle="modal" data-bs-target="#addSkillModal">Agregar
-    </button>
+    <div class='d-flex justify-content-end'>
+      <button *ngIf="isLoggedIn" type="button" class="btn btn-success btn-edicion mb-2 rounded-5"
+        (click)="onOpenModal('add')" data-bs-toggle="modal" data-bs-target="#addSkillModal">Agregar
+      </button>
+    </div>
 
-    <div class='divSkill row m-2 mb-3' *ngFor="let skill of skills">
-      <div class="divSkillDos">
+    <div class='divSkill row p-4 align-items-center' *ngFor="let skill of skills">
+      <div class="divSkillDos align-items-center">
 
-        <div class="col-1 p-0 m-0">
-          <img class='logoSkill' src="{{skill.imagenSkill}}" alt="Logo {{skill.nombreSkill}}">
-        </div>
+        <img class='logoSkill me-2' src="{{skill.imagenSkill}}" alt="Logo {{skill.nombreSkill}}">
 
-        <div class="progress bg-secondary col-9" role="progressbar" aria-label="Animated striped" aria-valuemin="0"
+        <div class="progress bg-secondary col-8" role="progressbar" aria-label="Animated striped" aria-valuemin="0"
           aria-valuemax="100" style="height: 20px">
-          <div class="ps-2 text-start progress-bar progress-bar-striped progress-bar-animated"
-            [style.width.%]='skill.porcentajeSkill'>
+          <div class="ps-2 text-start progress-bar" [style.width.%]='skill.porcentajeSkill'>
             {{skill.nombreSkill}}
             {{skill.porcentajeSkill}}%
           </div>
@@ -27,8 +26,8 @@
 
 
         <!-- Btn Edit -->
-        <div *ngIf="isLoggedIn" class='divSkillBtn col-2 text-center'>
-          <button (click)="onOpenModal('edit', skill)" class='btn tooltips me-1 btn-sm pe-0 p-0' data-placement='top'
+        <div *ngIf="isLoggedIn" class='divSkillBtn col text-end'>
+          <button (click)="onOpenModal('edit', skill)" class='btn tooltips me-1 btn-sm p-0' data-placement='top'
             data-bs-toggle='modal' data-original-title='Edit' data-bs-target="#editSkillModal">
             <i class="fa-solid fa-pen-to-square"></i>
           </button>

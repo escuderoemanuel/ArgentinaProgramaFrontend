@@ -4,7 +4,9 @@
     <!-- BANNER -->
     <img class="imagenBanner" src={{usuario.imagenBanner}} alt="Banner">
     <!-- FOTO -->
-    <img class='fotoPerfil img-fluid' src={{usuario.fotoPerfil}} alt="Foto de Perfil del Portfolio">
+    <img class='fotoPerfil img-fluid' src={{usuario.fotoPerfil}} style="overflow: hidden;"
+      alt="Foto de Perfil del Portfolio">
+
   </div>
 
   <div class='divDosUsuario d-flex justify-content-between'>
@@ -14,8 +16,8 @@
         <h5> <span class='corchete'>[</span> {{usuario.titulo}} <span class='corchete'>]</span></h5>
       </div>
 
+      <h4>Acerca De</h4>
       <div class='acercaDe'>
-        <h5>Acerca De</h5>
         <p class=''>{{usuario.acercaDe}}</p>
       </div>
 
