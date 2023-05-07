@@ -3,7 +3,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { NgForm } from '@angular/forms';
 import { Experience } from 'src/app/models/experience';
 import { ExperienceService } from 'src/app/services/experience.service';
-import { AuthServiceService } from 'src/app/services/auth-service.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 
 @Component({
@@ -18,7 +18,7 @@ export class ExperienceComponent {
 
   constructor(
     private experienceService: ExperienceService,
-    public authService: AuthServiceService
+    public authService: AuthService
   ) {}
 
   // Para traer experiencias

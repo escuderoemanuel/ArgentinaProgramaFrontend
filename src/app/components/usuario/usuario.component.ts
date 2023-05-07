@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Usuario } from 'src/app/models/usuario';
 import { UsuarioService } from 'src/app/services/usuario.service';
-import { AuthServiceService } from 'src/app/services/auth-service.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-usuario',
@@ -16,7 +16,7 @@ export class UsuarioComponent implements OnInit {
 
   constructor(
     private usuarioService: UsuarioService,
-    public authService: AuthServiceService
+    public authService: AuthService
   ) {}
 
   ngOnInit(): void {

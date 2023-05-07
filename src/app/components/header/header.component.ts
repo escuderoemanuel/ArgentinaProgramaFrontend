@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthServiceService } from 'src/app/services/auth-service.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -23,27 +23,27 @@ export class HeaderComponent implements OnInit {
   /* FIN Variables fijas del Header */
 
   /* Variables y funciones del Login */
-  isLoggedIn: boolean = false;
+  isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
 
   btnModalText: string = 'Entrar';
 
-  constructor(
-    private router: Router,
-    private authService: AuthServiceService
-  ) {}
+  constructor(private router: Router, public authService: AuthService) {}
 
   ngOnInit() {
+    console.log(this.isLoggedIn);
+    this.authService.setIsLoggedIn(this.isLoggedIn);
     this.authService.isLoggedIn$.subscribe((isLoggedIn) => {
       if (isLoggedIn) {
-        this.btnModalText = 'Salir';
+        this.isLoggedIn = true;
       } else {
-        this.btnModalText = 'Entrar';
+        this.isLoggedIn = false;
       }
     });
   }
 
   salir() {
     this.authService.setIsLoggedIn(false);
+    localStorage.removeItem('isLoggedIn');
     window.location.reload();
   }
 
@@ -72,4 +72,14 @@ export class HeaderComponent implements OnInit {
     return isLoggedIn;
   }
   /* Fin Variables y funciones del Login */
+
+  /* Funciones para mostrar u ocultar botón según isLoggedIn */
+  showButton(): boolean {
+    return this.isLoggedIn === true;
+  }
+
+  hideButton(): boolean {
+    return this.isLoggedIn === false;
+  }
+  /* Fin Funciones para mostrar u ocultar botón según isLoggedIn */
 }

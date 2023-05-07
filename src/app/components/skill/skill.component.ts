@@ -3,7 +3,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { NgForm } from '@angular/forms';
 import { Skill } from 'src/app/models/skill';
 import { SkillService } from 'src/app/services/skill.service';
-import { AuthServiceService } from 'src/app/services/auth-service.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-skill',
@@ -17,7 +17,7 @@ export class SkillComponent {
 
   constructor(
     private skillService: SkillService,
-    public authService: AuthServiceService
+    public authService: AuthService
   ) {}
 
   // Para traer Skills

@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Education } from 'src/app/models/education';
 import { EducationService } from 'src/app/services/education.service';
-import { AuthServiceService } from 'src/app/services/auth-service.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-education',
@@ -17,7 +17,7 @@ export class EducationComponent {
 
   constructor(
     private educationService: EducationService,
-    public authService: AuthServiceService
+    public authService: AuthService
   ) {}
 
   // Para traer educaciones
