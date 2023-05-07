@@ -1,6 +1,6 @@
 <!-- BANNER -->
 
-<div class="banner">
+<div class="banner" onload="checkLocalStorage()">
   <img class='iconArgProg' src='{{banner.imgInstitucional}}' alt="Logotipo Argentina Programa">
   <div class='socialIcons'>
     <a href="https://www.linkedin.com/in/emanuel-escudero-657675b7/" nonopener nonreferrer target='_blank'>
@@ -13,10 +13,12 @@
       <img class='icons me-2' src={{banner.iconEmail}} alt="Icono de Email">
     </a>
 
-    <!-- Button modal -->
-    <button type="button" class="btnIngresar btn btn-primary" data-bs-toggle="modal" data-bs-target="#login">
-      Entrar
-    </button>
+    <button *ngIf="!isLoggedIn" type="button" class="btnIngresar btn btn-primary" data-bs-toggle="modal"
+      data-bs-target="#login" id='entrar'> {{btnModalText}} </button>
+    <button *ngIf="isLoggedIn" type="button" class="btnIngresar btn btn-primary " data-bs-toggle="modal"
+      data-bs-target="#login" id='salir' (click)="salir()"> Salir </button>
+
+
     <!-- Modal -->
     <div class="modal fade" id="login" tabindex="-1" aria-labelledby="loginLabel" aria-hidden="true">
       <div class="modal-dialog">
@@ -40,7 +42,8 @@
             </div>
           </div>
           <div class="modal-footer">
-            <button type="submit" class="btn btn-primary">Entrar</button>
+            <button type="submit" (click)="checkLogin()" data-bs-dismiss="modal" class="btn btn-primary"
+              id='btnLog'>Entrar</button>
           </div>
         </div>
       </div>
