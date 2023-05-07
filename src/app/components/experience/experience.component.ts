@@ -1,20 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HttpErrorResponse } from '@angular/common/http';
 import { NgForm } from '@angular/forms';
 import { Experience } from 'src/app/models/experience';
 import { ExperienceService } from 'src/app/services/experience.service';
 import { AuthService } from 'src/app/services/auth.service';
 
-
 @Component({
   selector: 'app-experience',
   templateUrl: './experience.component.html',
   styleUrls: ['./experience.component.css'],
 })
-export class ExperienceComponent {
+export class ExperienceComponent implements OnInit {
   public experiences: Experience[] = [];
   public editExperience: Experience | undefined;
   public deleteExperience: Experience | undefined;
+  isLoggedIn = false;
 
   constructor(
     private experienceService: ExperienceService,
@@ -24,6 +24,9 @@ export class ExperienceComponent {
   // Para traer experiencias
   ngOnInit(): void {
     this.getExperiences();
+    this.authService.isLoggedIn$.subscribe((isLoggedIn) => {
+      this.isLoggedIn = isLoggedIn;
+    });
   }
 
   // Abrir Modal

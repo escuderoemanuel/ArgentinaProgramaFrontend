@@ -3,7 +3,7 @@
   <h4>Proyectos</h4>
   <div class='text-center proyectoContainerTab'>
     <!-- Btn Add -->
-    <button *ngIf="!authService.isLoggedIn$" type="button" class="btn btn-primary btn-edicion mb-2 rounded-5" (click)="onOpenModal('add')"
+    <button *ngIf="isLoggedIn" type="button" class="btn btn-primary btn-edicion mb-2 rounded-5" (click)="onOpenModal('add')"
       data-bs-toggle="modal" data-bs-target="#addProjectModal">Agregar
     </button>
 
@@ -29,7 +29,7 @@
 
           </div>
           <!-- Btn Edit -->
-          <div *ngIf="!authService.isLoggedIn$" class='divProjectBtn text-start'>
+          <div *ngIf="isLoggedIn" class='divProjectBtn text-start'>
             <button (click)="onOpenModal('edit', project)" class='btn tooltips  btn-sm p-0 m-0' data-placement='top'
               data-bs-toggle='modal' data-original-title='Edit' data-bs-target="#editProjectModal">
               <i class="fa-solid fa-pen-to-square"></i>

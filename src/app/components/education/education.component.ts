@@ -1,5 +1,5 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Education } from 'src/app/models/education';
 import { EducationService } from 'src/app/services/education.service';
@@ -10,19 +10,23 @@ import { AuthService } from 'src/app/services/auth.service';
   templateUrl: './education.component.html',
   styleUrls: ['./education.component.css'],
 })
-export class EducationComponent {
+export class EducationComponent implements OnInit {
   public educations: Education[] = [];
   public editEducation: Education | undefined;
   public deleteEducation: Education | undefined;
+
+  isLoggedIn = false;
 
   constructor(
     private educationService: EducationService,
     public authService: AuthService
   ) {}
-
   // Para traer educaciones
   ngOnInit(): void {
     this.getEducations();
+    this.authService.isLoggedIn$.subscribe((isLoggedIn) => {
+      this.isLoggedIn = isLoggedIn;
+    });
   }
 
   // Abrir Modal

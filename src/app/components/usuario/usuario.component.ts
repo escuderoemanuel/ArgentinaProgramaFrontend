@@ -13,6 +13,7 @@ export class UsuarioComponent implements OnInit {
   // Crea un usuario de tipo Usuario o Indefinido
   public usuario: Usuario | undefined;
   public editUsuario: Usuario | undefined;
+  isLoggedIn = false;
 
   constructor(
     private usuarioService: UsuarioService,
@@ -21,6 +22,9 @@ export class UsuarioComponent implements OnInit {
 
   ngOnInit(): void {
     this.getUsuario();
+    this.authService.isLoggedIn$.subscribe((isLoggedIn) => {
+      this.isLoggedIn = isLoggedIn;
+    });
   }
   public getUsuario(): void {
     this.usuarioService.getUsuario().subscribe({

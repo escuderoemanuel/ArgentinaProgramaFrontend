@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HttpErrorResponse } from '@angular/common/http';
 import { NgForm } from '@angular/forms';
 import { Skill } from 'src/app/models/skill';
@@ -10,10 +10,11 @@ import { AuthService } from 'src/app/services/auth.service';
   templateUrl: './skill.component.html',
   styleUrls: ['./skill.component.css'],
 })
-export class SkillComponent {
+export class SkillComponent implements OnInit{
   public skills: Skill[] = [];
   public editSkill: Skill | undefined;
   public deleteSkill: Skill | undefined;
+  isLoggedIn = false;
 
   constructor(
     private skillService: SkillService,
@@ -23,6 +24,9 @@ export class SkillComponent {
   // Para traer Skills
   ngOnInit(): void {
     this.getSkills();
+    this.authService.isLoggedIn$.subscribe((isLoggedIn) => {
+      this.isLoggedIn = isLoggedIn;
+    });
   }
 
   // Abrir Modal

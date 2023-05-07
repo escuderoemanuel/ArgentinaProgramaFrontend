@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HttpErrorResponse } from '@angular/common/http';
 import { NgForm } from '@angular/forms';
 import { Project } from 'src/app/models/project';
@@ -10,10 +10,11 @@ import { AuthService } from 'src/app/services/auth.service';
   templateUrl: './project.component.html',
   styleUrls: ['./project.component.css'],
 })
-export class ProjectComponent {
+export class ProjectComponent implements OnInit {
   public projects: Project[] = [];
   public editProject: Project | undefined;
   public deleteProject: Project | undefined;
+  isLoggedIn = false;
 
   constructor(
     private projectService: ProjectService,
@@ -23,6 +24,9 @@ export class ProjectComponent {
   // Para traer Projects
   ngOnInit(): void {
     this.getProjects();
+    this.authService.isLoggedIn$.subscribe((isLoggedIn) => {
+      this.isLoggedIn = isLoggedIn;
+    });
   }
 
   // Abrir Modal
