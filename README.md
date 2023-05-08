@@ -1,27 +1,61 @@
 # PortfolioEmanuelEscudero
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.5.
+Este proyecto fue generado con [Angular CLI](https://github.com/angular/angular-cli) version 15.2.5.
 
-## Development server
+# Portfolio/Curriculum Online
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Este proyecto es mi portfolio/curriculum online y es mi trabajo final del curso de desarrollo fullstack para ArgentinaPrograma.
 
-## Code scaffolding
+## Funcionalidades
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Login: permite el acceso para agregar, editar, actualizar y eliminar cualquier dato.
+- Invitado: permite la visualización de la información.
 
-## Build
+## Tecnologías Utilizadas
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- Angular (HTML, CSS, Bootstrap)
+- Typescript
+- Intellij Idea
+- Java
+- Springboot
+- MySQL
+- Xammp
+- Postman
 
-## Running unit tests
+## Ejecución del Proyecto
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Requisitos de Software
 
-## Running end-to-end tests
+- Navegador web
+- Angular CLI
+- Xammp
+- Intellij Idea
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Pasos para Ejecutar el Frontend
 
-## Further help
+1. Clone el repositorio.
+2. Abra una terminal y navegue hasta la carpeta raíz del proyecto.
+3. Ejecute el siguiente comando para instalar las dependencias:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```
+npm install
+```
+
+4. Ejecute el siguiente comando para iniciar el servidor de desarrollo:
+
+```
+ng serve
+```
+
+5. Abra su navegador y vaya a `http://localhost:4200`.
+
+### Contacto
+
+Desarrollador: Emanuel Escudero
+Email: escudero.mdz@gmail.com
+GitHub: https://github.com/escuderoemanuel
+LinkedIn: https://www.linkedin.com/in/emanuel-escudero-657675b7/
+
+## Documentación Adicional
+
+Para obtener más información sobre cómo utilizar la aplicación, consulte la documentación incluida en el repositorio.
