@@ -4,23 +4,39 @@ Este proyecto fue generado con [Angular CLI](https://github.com/angular/angular-
 
 # Portfolio/Curriculum Online
 
-Este proyecto es mi portfolio/curriculum online y es mi trabajo final del curso de desarrollo fullstack para ArgentinaPrograma.
+Este proyecto es mi portfolio/curriculum online y es mi trabajo final del curso de desarrollo Fullstack para ArgentinaPrograma.
 
 ## Funcionalidades
 
-- Login: permite el acceso para agregar, editar, actualizar y eliminar cualquier dato.
-- Invitado: permite la visualización de la información.
+- Login: estar logeado permite el acceso para agregar, editar, actualizar y eliminar cualquier dato (Datos Personales, Educación, Experiencia, Skills, Portfolio).
+- Invitado: no estar logeado, permite la visualización de la información.
 
-## Tecnologías Utilizadas
+## Tecnologías Utilizadas para el Front
 
-- Angular (HTML, CSS, Bootstrap)
+- Visual Studio Code
+- HTML
+- CSS
+- Bootstrap
+- Angular
 - Typescript
+- Repositorio en GitHub (https://github.com/escuderoemanuel/ArgentinaProgramaFrontend)
+- Deploy en Firebase
+
+## Tecnologías Utilizadas para la Base de Datos
+
+- MySQL Workbech
+- PHPMyAdmin
+- Deploy en Clever Cloud
+
+## Tecnologías Utilizadas para el Back
+
 - Intellij Idea
 - Java
 - Springboot
-- MySQL
 - Xammp
 - Postman
+- Repositorio en GitHub (https://github.com/escuderoemanuel/ArgentinaProgramaBackend/tree/main)
+- Deploy en Render
 
 ## Ejecución del Proyecto
 
@@ -58,4 +74,4 @@ LinkedIn: https://www.linkedin.com/in/emanuel-escudero-657675b7/
 
 ## Documentación Adicional
 
-Para obtener más información sobre cómo utilizar la aplicación, consulte la documentación incluida en el repositorio.
+Para obtener más información sobre cómo utilizar la aplicación, consulte la documentación oficial de las respectivas herramientas utilizadas.
