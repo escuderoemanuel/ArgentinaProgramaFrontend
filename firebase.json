@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "dist/portfolio-emanuel-escudero",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
