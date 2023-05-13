@@ -14,7 +14,7 @@
       <!-- Cada experiencia es una row -->
       <tr class='col'>
         <th class='row'>
-          <img class='me-2 mt-1 logoExp' src="{{experience.imagenExp}}" alt="Imagen Institución" height='18' width=auto>
+          <img class='me-2 mt-1 logoExp' src="{{experience.imagenExp}}" alt="Imagen Institución">
           {{experience.tituloExp}}
         </th>
         <td class='row ps-4'>
@@ -219,7 +219,7 @@
       </div>
     </div>
     <!-- Notificacion -->
-    <div *ngIf="experiences?.length == 0" class='col-lg-12 m-4'>
+    <div *ngIf="experiences?.length == 0" class='col-lg-10 m-4'>
       <div class='alert alert-info' role='alert'>
         <h5 class='alert-heading'>Sección Experiencia Laboral Vacía</h5>
         <p>No se han encontrado items para mostrar</p>
