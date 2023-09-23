@@ -1,5 +1,7 @@
 # PortfolioEmanuelEscudero
 
+![Project Poster](https://i.ibb.co/MhKbnn6/portfolio-AP.jpg)
+
 Este proyecto fue generado con [Angular CLI](https://github.com/angular/angular-cli) version 15.2.5.
 
 # Portfolio/Curriculum Online
