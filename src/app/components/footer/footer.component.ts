@@ -9,6 +9,6 @@ export class FooterComponent {
   footer: { rights: string; developer: string; logoUrl: string } = {
     rights: '© 2023 | All Rights Reserved',
     developer: '[ Powered by Emanuel Escudero ]',
-    logoUrl: 'https://i.ibb.co/nk8TBHQ/Logo2023.png',
+    logoUrl: 'https://i.ibb.co/hc02MDb/Logo.png',
   };
 }
