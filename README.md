@@ -70,9 +70,9 @@ ng serve
 ### Contacto
 
 Desarrollador: Emanuel Escudero
-Email: escudero.mdz@gmail.com
+Email: emanuelescudero.dev@gmail.com
 GitHub: https://github.com/escuderoemanuel
-LinkedIn: https://www.linkedin.com/in/emanuel-escudero-657675b7/
+LinkedIn: https://www.linkedin.com/in/emanuelescudero-dev/
 
 ## Documentación Adicional
 

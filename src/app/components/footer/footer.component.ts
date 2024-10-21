@@ -8,8 +8,8 @@ import { Component } from '@angular/core';
 })
 export class FooterComponent {
   footer: { rights: string; developer: string; logoUrl: string } = {
-    rights: '© 2023 | All Rights Reserved',
-    developer: '[ Powered by Emanuel Escudero ]',
+    rights: '© 2024 | All Rights Reserved',
+    developer: '[ Developed by Emanuel Escudero ]',
     logoUrl: 'https://i.ibb.co/Gxk0ktL/Logo2024.png',
   };
 }

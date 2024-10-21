@@ -15,5 +15,11 @@
 }
 
 .footer img {
-  width: 30px;
+  height: 24px;
+  cursor: pointer;
+  transition: all ease 200ms;
+}
+
+.footer img {
+  transform: scale(1.05) rotate(7deg);
 }
