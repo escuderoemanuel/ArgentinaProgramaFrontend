@@ -19,7 +19,7 @@ Este proyecto es mi portfolio/curriculum online y es mi trabajo final del curso 
 - Bootstrap
 - Angular
 - Typescript
-- Repositorio en GitHub (https://github.com/escuderoemanuel/ArgentinaProgramaFrontend)
+- [Repositorio en GitHub](https://github.com/escuderoemanuel/ArgentinaProgramaFrontend)
 - Deploy en Firebase
 
 ## Tecnologías Utilizadas para la Base de Datos
@@ -35,7 +35,7 @@ Este proyecto es mi portfolio/curriculum online y es mi trabajo final del curso 
 - Springboot
 - Xammp
 - Postman
-- Repositorio en GitHub (https://github.com/escuderoemanuel/ArgentinaProgramaBackend/tree/main)
+- [Repositorio en GitHub](https://github.com/escuderoemanuel/ArgentinaProgramaBackend/tree/main)
 - Deploy en Render
 
 ## Ejecución del Proyecto
